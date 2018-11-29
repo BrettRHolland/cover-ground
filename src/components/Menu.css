@@ -1,0 +1,23 @@
+.menu {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  height: 100vh;
+  font-size: 42px;
+  font-weight: 700;
+  display: flex;
+  width: 100vw;
+  position: absolute;
+  left: 100vw;
+  transition: 0.75s;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu--open {
+  transform: translateX(-100vw);
+}
+
+.menu li {
+  margin: 10px 0;
+}
