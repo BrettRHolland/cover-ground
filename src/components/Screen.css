@@ -1,0 +1,50 @@
+.screen {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 2fr 120px;
+  height: 100vh;
+  left: -100vw;
+  position: absolute;
+  top: 0;
+  transition: 0.75s ease;
+  width: 100vw;
+  z-index: 1;
+}
+
+.screen--open {
+  transform: translateX(100vw);
+}
+
+.info {
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  position: absolute;
+  left: 50px;
+  top: 36px;
+}
+
+.photo--screen {
+  background-image: url("/yoshi-takekawa-147380-unsplash.jpg");
+  position: relative;
+}
+
+.featured {
+  position: absolute;
+  background: #476c41;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 0 10%;
+  width: 80%;
+  height: 120px;
+}
+
+.featured__headline {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 40px;
+}

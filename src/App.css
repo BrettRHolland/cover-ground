@@ -1,6 +1,5 @@
-.splash {
+.landing {
   display: grid;
-  font-family: "Muli", sans-serif;
   font-size: 16px;
   grid-template-columns: 70% 30%;
   min-height: 100vh;
@@ -11,14 +10,16 @@
   width: 100%;
 }
 
-.logo {
-  font-size: 32px;
+.about__headline {
+  font-size: 36px;
   font-weight: 900;
-  line-height: 2;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
   padding: 40% 20% 0;
 }
 
 .about__description {
+  font-size: 18px;
   line-height: 2;
   padding: 0 20%;
 }
@@ -30,9 +31,10 @@
 }
 
 .button {
-  background: #d28969;
+  background: rgba(210, 137, 105, 1);
   border: none;
   color: #fff;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -42,9 +44,13 @@
   width: 60%;
 }
 
-.icon {
+.button:hover {
+  background: rgba(210, 137, 105, 0.8);
+}
+
+.menu-icon {
   cursor: pointer;
-  height: 27px;
+  height: 24px;
   position: absolute;
   right: 50px;
   top: 40px;
@@ -52,9 +58,9 @@
   z-index: 10;
 }
 
-.menu-icon {
+.menu-icon__bar {
   background: #000;
-  height: 6px;
+  height: 4px;
   position: relative;
   right: 0;
   top: 0;
@@ -62,18 +68,29 @@
   width: 24px;
 }
 
-.menu-icon--bottom {
-  top: 9px;
+.menu-icon:hover .menu-icon__bar {
+  background: #999;
+  /* animation: menu-hover 0.25s linear; */
 }
 
-.menu-icon--rotate {
+.menu-icon__bar--bottom {
+  top: 12px;
+}
+
+.menu-icon__bar--rotate {
   background: #fff;
   transform: rotate(45deg);
   transform-origin: top left;
 }
 
-.menu-icon--bottom--rotate {
+.menu-icon__bar--bottom--rotate {
   background: #fff;
   transform: rotate(-45deg);
   transform-origin: bottom left;
+}
+
+@keyframes menu-hover {
+  from {transform: scale(1, 1)}
+  50% {transform: scale(1.025, 1.025)}
+  to {transform: scale(1, 1)}
 }
