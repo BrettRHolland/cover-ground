@@ -2,11 +2,11 @@ import React from 'react';
 import './Screen.css';
 
 const Screen = props => {
-  const { isScreenOpen } = props;
+  const { isScreenOpen, handleHomeClick } = props;
   return (
     <div className={isScreenOpen ? 'screen screen--open' : 'screen'}>
       <div className="info">
-        <h1 className="logo">Cg.</h1>
+        <h1 className="logo" onClick={handleHomeClick}>Cg.</h1>
         <h2 className="about__headline">Vestibulum quis vehicula dui.</h2>
         <p className="about__description">
           Vestibulum porttitor, urna a aliquet consectetur, odio erat tincidunt risus, non tristique

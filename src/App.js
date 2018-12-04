@@ -16,6 +16,15 @@ class App extends Component {
     });
   };
 
+  handleHomeClick = () => {
+    this.setState({
+      menuOpen: false,
+      screenOpen: false
+    });
+  };
+
+
+
   render() {
     const { menuOpen, screenOpen } = this.state;
     return (
@@ -27,7 +36,7 @@ class App extends Component {
               <div
                 className="menu-icon"
                 onClick={() => {
-                  this.setState({ menuOpen: !menuOpen, screenOpen: false });
+                  this.setState({ menuOpen: !menuOpen });
                 }}
               >
                 <div className={menuOpen ? 'menu-icon__bar menu-icon__bar--rotate' : 'menu-icon__bar'} />
@@ -52,8 +61,8 @@ class App extends Component {
             </button>
           </div>
         </div>
-        <Menu isMenuOpen={menuOpen} handleLinkClick={this.handleLinkClick} />
-        <Screen isScreenOpen={screenOpen} />
+        <Menu isMenuOpen={menuOpen} handleLinkClick={this.handleLinkClick} handleHomeClick={this.handleHomeClick} />
+        <Screen isScreenOpen={screenOpen} handleHomeClick={this.handleHomeClick}  />
       </Fragment>
     );
   }

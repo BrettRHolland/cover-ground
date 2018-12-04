@@ -6,6 +6,14 @@
   width: 100vw;
 }
 
+@media (max-width: 480px) {
+  
+  .landing {
+    grid-template-columns: 100%;
+  }
+  
+}
+
 .about {
   width: 100%;
 }
