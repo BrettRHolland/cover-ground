@@ -2,16 +2,9 @@
   display: grid;
   font-size: 16px;
   grid-template-columns: 70% 30%;
+  max-width: 100%;
   min-height: 100vh;
   width: 100vw;
-}
-
-@media (max-width: 480px) {
-  
-  .landing {
-    grid-template-columns: 100%;
-  }
-  
 }
 
 .about {
@@ -33,13 +26,14 @@
 }
 
 .photo {
-  background-image: url("/brooke-cagle-65598-unsplash.jpg");
-  background-position: center;
+  background-image: url("/katie-drazdauskaite-1199334-unsplash.jpg");
+  background-position: center bottom;
   background-size: cover;
+  height: 100vh;
 }
 
 .button {
-  background: rgba(210, 137, 105, 1);
+  background: rgba(189, 147, 97, 1);
   border: none;
   color: #fff;
   cursor: pointer;
@@ -49,11 +43,8 @@
   margin: 100px 20%;
   outline: none;
   padding: 20px 45px;
+  transition: 0.75s;
   width: 60%;
-}
-
-.button:hover {
-  background: rgba(210, 137, 105, 0.8);
 }
 
 .menu-icon {
@@ -70,35 +61,182 @@
   background: #000;
   height: 4px;
   position: relative;
-  right: 0;
-  top: 0;
-  transition: 0.75s;
   width: 24px;
 }
 
-.menu-icon:hover .menu-icon__bar {
-  background: #999;
-  /* animation: menu-hover 0.25s linear; */
+.menu-icon__bar:first-of-type {
+  right: 0;
+  top: 0;
 }
 
-.menu-icon__bar--bottom {
-  top: 12px;
+.menu-icon__bar:nth-of-type(2) {
+  right: 0;
+  top: 4px;
 }
 
-.menu-icon__bar--rotate {
+.menu-icon__bar:last-of-type {
+  right: 0;
+  top: 8px;
+}
+
+.open {
   background: #fff;
-  transform: rotate(45deg);
-  transform-origin: top left;
 }
 
-.menu-icon__bar--bottom--rotate {
-  background: #fff;
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
+.open:first-of-type {
+  animation: first-bar-rotation 0.75s;
+  transform: translateY(8px) rotate(-45deg);
 }
 
-@keyframes menu-hover {
-  from {transform: scale(1, 1)}
-  50% {transform: scale(1.025, 1.025)}
-  to {transform: scale(1, 1)}
+.closed:first-of-type {
+  animation: first-bar-reverse-rotation 0.75s;
+}
+
+.open:nth-of-type(2) {
+  animation: middle-bar-rotation 0.75s;
+  opacity: 0;
+}
+
+.closed:nth-of-type(2) {
+  animation: middle-bar-reverse-rotation 0.75s;
+}
+
+.open:last-of-type {
+  animation: last-bar-rotation 0.75s;
+  transform: translateY(-8px) rotate(45deg);
+}
+
+.closed:last-of-type {
+  animation: last-bar-reverse-rotation 0.75s;
+}
+
+/*** MEDIA QUERIES ***/
+@media (max-width: 1300px) {
+  .landing {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing {
+    grid-template-columns: 100%;
+  }
+
+  .photo {
+    height: 40vh;
+    max-width: 100%;
+  }
+
+  .about__headline {
+    padding: 20% 20% 0;
+  }
+
+  .button {
+    margin: 30px 20% 100px;
+  }
+}
+
+/*** ANIMATIONS ***/
+@keyframes first-bar-rotation {
+  from {
+    background: #000;
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(0deg);
+  }
+
+  to {
+    background: #fff;
+    transform: translateY(8px) rotate(-45deg);
+  }
+}
+
+@keyframes first-bar-reverse-rotation {
+  from {
+    background: #fff;
+    transform: translateY(8px) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(0deg);
+  }
+
+  to {
+    background: #000;
+    transform: translateY(0);
+  }
+}
+
+@keyframes middle-bar-rotation {
+  from {
+    background: #000;
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    background: #fff;
+    opacity: 0;
+  }
+}
+
+@keyframes middle-bar-reverse-rotation {
+  from {
+    background: #fff;
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    background: #000;
+    opacity: 1;
+  }
+}
+
+@keyframes last-bar-rotation {
+  from {
+    background: #000;
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+
+  to {
+    background: #fff;
+    transform: translateY(-8px) rotate(45deg);
+  }
+}
+
+@keyframes last-bar-reverse-rotation {
+  from {
+    background: #fff;
+    transform: translateY(-8px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+
+  to {
+    background: #000;
+    transform: translateY(0);
+  }
 }

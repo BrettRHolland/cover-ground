@@ -2,11 +2,13 @@ import React from 'react';
 import './Menu.css';
 
 const Menu = (props) => {
-  const { isMenuOpen, handleLinkClick, handleHomeClick } = props;
+  const { menuStatus } = props;
   return (
-    <ul className={isMenuOpen ? 'menu menu--open' : 'menu'}>
-      <li onClick={handleHomeClick}>Home</li>
-      <li onClick={handleLinkClick}>Another Page</li>
+    <ul className={menuStatus === 'open' ? 'menu menu--open' : 'menu'}>
+      <li>Lorem Ipsum</li>
+      <li>Aliquam Sit</li>
+      <li>Cras Feugiat</li>
+      <li>Duis Volutpat </li>
     </ul>
   );
 };

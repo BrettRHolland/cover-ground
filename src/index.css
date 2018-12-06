@@ -6,9 +6,10 @@
 }
 
 body {
-  font-family: "Muli", sans-serif;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
   width: 100vw;
-  overflow: hidden;
 }
